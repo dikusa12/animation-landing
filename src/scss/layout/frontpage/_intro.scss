@@ -1,0 +1,89 @@
+.intro {
+  padding: 14rem 0;
+
+  &__title {
+    font-size: 15rem;
+    line-height: 90%;
+    font-weight: 400;
+  }
+
+  &__wrapper {
+    position: relative;
+    padding: 0 60px;
+    border-radius: 100px;
+    color: #e0fd60;
+    display: inline-block;
+    overflow: hidden;
+    transition: .8s cubic-bezier(.16, 1, .3, 1);
+
+    &:hover {
+      transform: scaleX(1.02);
+      transition: transform .6s cubic-bezier(.34, 5.56, .64, 1);
+
+      & .intro__button {
+        transform: translateY(-110%);
+      }
+
+      & .intro__button-background span {
+        border-radius: 0;
+        transform: translateY(0);
+        transition-duration: .5s,.9s;
+      }
+    }
+  }
+
+  &__border {
+    position: absolute;
+    inset: 0;
+    border: 2px solid;
+    border-radius: 1000px;
+  }
+
+  &__button {
+    position: relative;
+    text-transform: uppercase;
+    z-index: 2;
+    display: block;
+    line-height: .92;
+    transition: transform .8s cubic-bezier(.16,1,.3,1);
+
+    &:after {
+      content: attr(data-text);
+      display: block;
+      position: absolute;
+      top: 110%;
+      color: #000;
+    }
+
+    &-background {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+
+      & span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        transform: translateY(101%);
+        background: currentColor;
+        border-radius: 50% 50% 0 0;
+        transition: transform .5s cubic-bezier(.4,0,0,1),border-radius .5s cubic-bezier(.4,0,0,1);
+      }
+    }
+  }
+
+  &__underline {
+    animation: blink backwards 1s steps(1) infinite;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+

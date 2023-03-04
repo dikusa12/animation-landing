@@ -92,5 +92,5 @@ gulp.task(
 
 gulp.task(
     "build",
-    gulp.parallel("styles", "scripts", "images", "libs", "fonts")
+    gulp.parallel("styles", "scripts", "images", "libs", "fonts", "html")
 );
